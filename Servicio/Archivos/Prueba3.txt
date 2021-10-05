@@ -1,0 +1,5 @@
+
+    Hola mundo, me presento, soy Diego, soy un programador
+    y este es mi primer programa manejador de archivos con 
+    python
+    Hola, esto es otro ejemplo
