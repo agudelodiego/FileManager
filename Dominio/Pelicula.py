@@ -74,7 +74,7 @@ class Pelicula:
 
 
 
-#! ENTORNO DE PRUEBAS
+#!---------------ENTORNO DE PRUEBAS-----------------
 if __name__ == '__main__':
     
     #Instanciamiento de clase peliculas
@@ -100,3 +100,4 @@ if __name__ == '__main__':
 
     #Uso de metodo __str__
     print(peli2)
+#!--------------------------------------------------
