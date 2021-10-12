@@ -33,6 +33,7 @@ class Catalogo :
             archivo = open(archivo,'x')
             print(f'''
             El archivo {nombre} fue creado de manera exitosa
+            INFO: {archivo}
             ''')
             return archivo
 
@@ -44,6 +45,7 @@ class Catalogo :
             del directorio, intentalo de nuevo
             usando un nombre diferente
             ''')
+            return False
 
         except Exception as error:
 
@@ -52,6 +54,7 @@ class Catalogo :
             Descripcion del error:{error}
             ERROR: {type(error)}
             ''')
+            return False
     #----------------------------------------------------------
 
 
@@ -65,6 +68,7 @@ class Catalogo :
 
             try:
                 archivo = open(archivo,'a')
+                mensaje = mensaje+'\n'
                 archivo.write(mensaje)
                 print('-------Mensaje anexado exitosamente--------')
 
@@ -143,6 +147,18 @@ class Catalogo :
     #-----------------------------------------------------------
 
 
+
+    #---------------Comprobar si un archivo existe-------------
+    @classmethod
+    def Verificar(cls,nombre):
+
+        archivo = cls.path + nombre
+        validacion = os.path.exists(archivo)
+        return validacion
+    #----------------------------------------------------------
+
+
+
     #---------------------Eliminar archivos---------------------
     @classmethod
     def Borrar(cls,nombre):
@@ -155,6 +171,7 @@ class Catalogo :
             print(f'''
             ------------Archivo {nombre} borrado exitosamente
             ''')
+            return True
     
         except FileNotFoundError:
 
@@ -162,6 +179,7 @@ class Catalogo :
             El archivo {nombre} no existe dentro del directorio 
             de trabajo, intentelo de nuevo con un archivo existente
             ''')
+            return False
 
         except Exception as error:
 
@@ -169,6 +187,7 @@ class Catalogo :
             Algo salio mal al intentar borrar el archivo {nombre}
             Descripcion del error: {error}
             ERROR: {type(error)}''')
+            return False
     #-----------------------------------------------------------
 
 
